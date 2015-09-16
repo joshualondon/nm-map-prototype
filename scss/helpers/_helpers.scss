@@ -1,0 +1,51 @@
+@import '../core/_colors.scss';
+
+/**
+*	Reset all nav ul's
+*/
+nav ul,
+%no-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+@mixin no-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+%vertical-align {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+$line-height: 1.5rem;
+
+.is-hidden {
+	opacity: 0;
+	transform: scale(0);
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+.is-visible {
+	opacity: 1;
+	transform: scale(1);
+	width: auto;
+	height: auto;
+	overflow: visible;
+}
+
+$border-radius: .25em;
+
+
+.help-trigger,
+.fa.help-trigger {
+	font-size: .85em;
+	color: $cblue;
+	cursor: pointer;
+}

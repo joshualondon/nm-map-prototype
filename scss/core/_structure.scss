@@ -1,0 +1,48 @@
+$width:		100%;
+$max-width:	60em;
+
+//** keep the vertical rhythm
+section,
+article,
+.container {
+	margin-bottom: $line-height;
+}
+
+.container {
+	max-width: $max-width;
+	margin: 0 auto;
+	padding: 0 1em;
+	
+	@include clearfix;
+}
+
+@mixin container {
+	@extend .container;
+	@include clearfix;	
+}
+
+main header {
+	padding: 0;
+	
+	@include container;
+	
+	h1 {
+		color: $darkest-grey;
+		line-height: 1em;
+		margin: .75em 0 .5em;
+	}
+}
+
+.page {
+	background: $white;
+	border: 1px solid $light-grey;
+	position: relative;
+	
+	&.container {
+		padding: 0;
+	}
+}
+
+.view {
+	
+}

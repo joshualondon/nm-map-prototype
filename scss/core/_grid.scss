@@ -1,0 +1,44 @@
+$grid-columns: 12;
+$gutter: 1%;
+$grid-max-width: 60em;
+$vertical-space: 1.5em;
+
+.row {
+	max-width: $grid-max-width;
+	
+	@media #{$medium} {
+		margin: 0 auto $vertical-space;
+	}
+	
+	@include clearfix;
+}
+
+[class*='column-'],
+.column {
+	float: left;
+	margin: 0 $gutter $vertical-space $gutter;
+	min-height: 1px;
+	position: relative;
+	width: 100%;
+	
+	@media #{$medium} {
+		margin-bottom: 0;
+	}
+	
+	&:first-child {
+		margin-left: 0 !important;
+	}
+	
+	&:last-child {
+		float: right;
+		margin-right: 0 !important;
+	}
+}
+
+@for $i from 1 through $grid-columns {
+	.column-#{$i} {
+		@media #{$medium} {
+			width: (100% - $gutter*4) / $grid-columns * $i;
+		}
+	}
+}

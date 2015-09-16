@@ -1,0 +1,29 @@
+table {
+	//width: 100%;
+}
+
+tr {
+	&.subtotal {
+		border-top: 1px solid $light-grey;
+	}
+}
+
+th,
+td {
+	padding: .25rem .75rem;
+	text-align: right; // most is financial
+}
+
+th {
+	//border-bottom: 1px solid $light-grey;
+	color: $medium-grey;
+	@include font-light(.85rem);
+	line-height: 1.2;
+	vertical-align: bottom;
+	//white-space: nowrap;
+}
+
+tfoot {
+	border-top: 1px solid $light-grey;
+}
+

@@ -1,0 +1,295 @@
+$search-results-width: 28.5em;
+
+.search {
+	background: $white;
+	border: 1px solid $light-grey;
+	box-shadow: 1px 1px 5px rgba(0,0,0,.4);
+	font-size: 1.25rem;
+	padding: .25em;
+	position: absolute;
+	top: 1em;
+	left: 1em;
+	width: calc(100% - 2em); //padding * 2
+	max-width: $search-results-width;
+	z-index: 2;
+	
+	&:before {
+		border: 1px solid $light-grey;
+		content: '';
+		display: block;
+		position: absolute;
+		top: .25em; right: .25em; bottom: .25em; left: .25em;
+	}
+	
+	@media #{$medium} {
+		font-size: 1rem;
+	}
+}
+
+.search-input-wrap {
+	float: left;
+	position: relative;
+	width: calc(100% - 4em); // minus default button state
+	
+	@include clearfix;
+	
+	label {
+		background: transparent;
+	    display: block;
+	    float: left;
+		padding: 0;
+		position: relative;
+		transition: .2s;
+		width: 50%;
+		
+		input[type="text"] {
+			background: transparent;
+			border: 0;
+			cursor: pointer;
+			float: left;
+			line-height: 1.5;
+			padding: .55em .75em .35em 2.5em;
+			width: 100%;
+			transition: .2s;
+			z-index: 1;
+			
+			&.name-search {
+				border-right: 1px solid $light-grey;
+			}
+		}
+		
+		> .fa {
+			color: $medium-grey;
+			position: absolute;
+			top: .7em; left: 1em;
+			z-index: 2;
+			
+			&.fa-male {
+				left: 1.325em;
+			}
+		}
+		
+		.clear-search-field {
+			background: transparent;
+			display: inline-block;
+			position: absolute;
+			top: .25em;
+			right: .5em;
+			transform: scale(0);
+			
+			
+			.fa {
+				font-size: .75em;
+				padding: 0;
+				position: relative;
+				top: -.125em;
+				left: 0;
+			}
+			
+		}
+		
+		/**
+		*	Modify the element widths based
+		*	on the label class
+		*/
+		&.input-active {
+			width: calc(100% - 3em); // minus inactive input
+			
+			.fa {
+				color: $cblue;
+			}
+		}
+		
+		&.input-inactive {
+			width: 3em;
+		}
+	}
+	
+	/**
+	*	label with search intent -- button larger
+	*/
+	&.search-intent {
+		width: calc(100% - 8em);
+		
+		.input-active {
+			width: 100%;
+		}
+		
+		.input-inactive {
+			overflow: hidden;
+			width: 0;
+		}
+		
+		.clear-search-field {
+			transition: .2s;
+			transition-delay: .3s;
+			transform: scale(1);
+		}
+	}
+	
+}
+
+.search-submit {
+	color: $white;
+	float: right;
+	padding: .7em .75em;
+	position: absolute;
+	right: .25em;
+	text-align: center;
+	transition: .2s;
+	width: 4em;
+	
+	&.search-intent {
+		width: 8em;
+	}
+	
+	span {
+		display: none;
+	}
+	
+	.fa {
+		margin-top: -2px;
+	}
+}
+
+/*
+
+
+.search-input-wrap {
+	
+	
+	label {
+		
+		
+		.fa {
+			color: $medium-grey;
+			position: absolute;
+			top: .7em;
+			left: 1em;
+			z-index: -1;
+			
+			&.fa-globe {
+				//left: 1.25em;
+			}
+		}
+		
+		.clear-search-field {
+			background: transparent;
+			display: inline-block;
+			position: absolute;
+			top: .25em;
+			right: .5em;
+			transform: scale(0);
+			
+			.fa {
+				font-size: .75em;
+				padding: 0;
+				position: relative;
+				top: -.125em;
+				left: 0;
+			}
+		}
+		
+		&.is-focussed {
+			 
+			
+			.clear-search-field {
+				transform: scale(1);
+				transition: .2s;
+				transition-delay: .5s;
+			}
+			
+		}
+	}
+	
+	input[type="text"] {
+		background: transparent;
+		border: 0;
+		cursor: pointer;
+		float: left;
+		line-height: 1.5;
+		padding: .5em .75em .35em 2.5em;
+		width: 12em;
+		transition: .2s;
+		z-index: 1;
+		
+		&.name-search {
+			border-right: 1px solid $light-grey;
+			//margin-left: -2px;
+		}
+		
+		&.is-focussed {
+			width: 20em;
+		}
+		
+		&.is-unfocussed {
+			padding-right: 0;
+			width: 1em;
+		}
+	}
+	
+
+}
+
+
+
+
+
+.filters-trigger {
+	background: transparent;
+	font-size: .75em;
+	top: .625em;
+	left: .5em;
+	
+	&:hover {
+		background: $light-grey;
+		//color: $white;
+	}
+	
+	.fa:last-child {
+		margin-left: .25em;
+	}
+	
+	&.filters-open {
+		.fa:last-child {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+			
+
+*/
+
+.search-results {
+	background: $white;
+	height: 0;
+	position: fixed;
+	top: 5em;
+	left: 1em;
+	overflow-y: scroll;
+	transform: translateY(100%);
+	transition: .2s;
+	width: $search-results-width;
+	z-index: 1;
+	
+	@media #{$large} {
+		width: $search-results-width;
+	}
+	
+	&.is-active {
+		height: 100%;
+		transform: translateY(0);
+	}
+	
+	h2 {
+		font-size: 1rem;
+		padding: .75em 1em;
+		border-bottom: 1px solid $light-grey;
+		
+		span {
+			float: right;
+			font-size: .75em;
+		}
+	}
+}

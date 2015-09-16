@@ -1,0 +1,25 @@
+@keyframes frCardEntrance {
+	0% {
+		
+	} 100% {
+		transform: translateY(0);
+	}
+}
+
+
+@for $i from 1 through 15 {
+	.fr-card:nth-child(#{$i}) {
+		animation-delay: $i /8 + s;
+	}
+}
+
+.fr-card {
+	border-bottom: 1px solid $light-grey;
+	min-height: 5em;
+	padding: 1em;
+	
+	//animation-name: slideInUp;
+	//animation-duration: 1s;
+	
+	//transform: translateY(-100%);
+}

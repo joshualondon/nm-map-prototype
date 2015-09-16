@@ -1,0 +1,36 @@
+@import 'vendor/_normalize-v3.min.scss';
+@import 'vendor/_web-font.scss';
+
+// load helpers first to support structure
+@import 'core/_responsive.scss';
+@import 'helpers/_visual-elements.scss';
+@import 'helpers/_helpers.scss';
+@import 'helpers/_clearfix.scss';
+@import 'helpers/_animate.scss';
+
+// load all base stuff
+@import 'core/_forms.scss';
+@import 'core/_vars.scss';
+@import 'core/_colors.scss';
+@import 'core/_buttons.scss';
+@import 'core/_typography.scss';
+@import 'core/_tables.scss';
+@import 'core/_base.scss';
+@import 'core/_grid.scss';
+@import 'core/_structure.scss';
+
+
+// shared components
+@import 'components/_fr-card.scss';
+@import 'components/_tabs.scss';
+@import 'components/_loader.scss';
+@import 'components/_map.scss';
+@import 'components/_search.scss';
+@import 'components/_search-filters.scss';
+@import 'components/_primary-options.scss';
+
+// layout views
+@import 'views/layout/_header.scss';
+@import 'views/layout/_footer.scss';
+
+// page/screen/sub views

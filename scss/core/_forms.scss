@@ -1,0 +1,91 @@
+input,
+label,
+select,
+button,
+textarea {
+	background: $white;
+	border: 0;
+	
+	display: inline-block;
+	margin: 0;
+	padding: .25em .5em;
+	vertical-align: middle;
+	white-space: normal;
+	
+	// redeclare
+	@include font-light(1em);
+	line-height: 1;
+	
+	// webkit
+	border-radius: 0;
+	//-webkit-appearance: none;
+}
+
+input:focus {
+	outline: 0;
+}
+
+input,
+textarea {
+	box-sizing: border-box;
+}
+
+/* These elements are usually rendered a certain way by the browser */
+button,
+input[type=reset],
+input[type=button],
+input[type=submit],
+input[type=checkbox],
+input[type=radio],
+select {
+	box-sizing: border-box;
+}
+
+/* Text Inputs
+-----------------------------------------------*/
+
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=range],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week] {
+	border: 1px solid $light-grey;
+	
+	@media #{$high-density} {
+		border: 1px solid $light-grey;
+	}
+	
+}
+
+input[type=checkbox],
+input[type=radio] {
+	width: 13px;
+	height: 13px;
+}
+
+/* Search Input
+-----------------------------------------------*/
+
+/* Make webkit render the search input like a normal text field */
+input[type=search] {
+	-webkit-appearance: none;
+	-webkit-box-sizing: border-box;
+}
+
+/* Turn off the recent search for webkit. It adds about 15px padding on the left */
+::-webkit-search-decoration {
+	display: none;
+}
+
+::-webkit-input-placeholder {
+	line-height: 1.5;
+}

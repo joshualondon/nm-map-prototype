@@ -1,0 +1,59 @@
+.tabs {
+	border-bottom: 1px solid $light-grey;
+	
+	@include clearfix;
+	
+	.tabs-title {
+		float: left;
+		padding-left: 1em;
+		
+		@include font-bold(1em);
+	}
+	
+	ul {
+		@include clearfix;
+		margin-bottom: -1px;
+		
+		&.with-title {
+			float: right;
+		}
+	}
+	
+	> ul li {
+		display: block;
+		float: left;
+		font-size: .85em;
+		
+		
+		
+		a {
+			color: $medium-grey;
+			display: block;
+	        padding: .25em 1em;
+	        position: relative;
+	        text-decoration: none;
+	        
+	        &:before {
+				background: $cblue;
+				content: '';
+				display: block;
+				position: absolute;
+				left: 50%;
+				bottom: 0;
+				height: 2px;
+				width: 0;
+				transform: translateX(-50%);
+				transition: width .2s ease;
+			}
+			
+			&:hover,
+			&.is-active {
+				color: $black;
+				
+				&:before {
+					width: 100%;
+				}
+			}
+		}		
+	}
+}

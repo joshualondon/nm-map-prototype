@@ -1,0 +1,12 @@
+.primary-options {
+	position: absolute;
+	top: 4em;
+	left: 1em;
+	
+	@include no-list;
+	
+	li {
+		display: block;
+		float: left;
+	}
+}

@@ -1,0 +1,46 @@
+@import '_colors.scss';
+
+//** If you really need to http://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
+html * {
+//	-webkit-font-smoothing: antialiased;
+//	-moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:after, 
+*:before {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background-color: $white;
+	color: $black;
+}
+
+a {
+	color: $color-link;
+	text-decoration: none;
+	
+	&:hover {
+		text-decoration: underline;
+	}
+	
+	&:visited {
+		border-bottom: 1px dotted $color-link;
+		color: $color-link;
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+::selection,
+.highlight {
+	background: $color-highlight;
+}

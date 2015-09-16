@@ -1,0 +1,52 @@
+.brand-header {
+	background: $nm-blue;
+    padding: .5em;
+    position: relative;
+    z-index: 50;
+    
+    @include clearfix;
+}
+
+.logo,
+#nm-logo {
+	width: 185px;
+	height: auto;
+}
+
+.logo {
+	display: block;
+	float: left;
+	padding: .5em 0 0;
+	
+	#nm-logo {
+		display: inline-block;
+	}
+	
+	.st0 {
+		fill: $nm-gold;
+	}
+	
+	.st1 {
+		fill: $white;
+	}
+}
+
+.app-title {
+	color: $white;
+	display: inline-block;
+	font-size: 1rem;
+	margin: .85em 0 0 1em;
+	padding: 0 0 0 1em;
+	position: relative;
+	
+	&:before {
+		border-left: 1px solid $white;
+		content: '';
+		display: block;
+		position: absolute;
+		top: 2px;
+		left: 0;
+		height: 15px;
+		width: 1px;
+	}
+}

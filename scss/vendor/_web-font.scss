@@ -1,0 +1,136 @@
+@import '../helpers/_helpers.scss';
+
+@font-face {
+    font-family: 'GuardianSans-Light';
+    src: url('../fonts/guardian/GuardianSans-Light-Web.eot');
+    src: url('../fonts/guardian/GuardianSans-Light-Web.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/guardian/GuardianSans-Light-Web.woff') format('woff'), 
+         url('../fonts/guardian/GuardianSans-Light-Web.ttf') format('truetype'), 
+         url('../fonts/guardian/GuardianSans-Light-Web.svg#GuardianSansLight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GuardianSans-LightIt';
+    src: url('../fonts/guardian/GuardianSans-LightIt-Web.eot');
+    src: url('../fonts/guardian/GuardianSans-LightIt-Web.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/guardian/GuardianSans-LightIt-Web.woff') format('woff'), 
+         url('../fonts/guardian/GuardianSans-LightIt-Web.ttf') format('truetype'), 
+         url('../fonts/guardian/GuardianSans-LightIt-Web.svg#GuardianSansLightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'GuardianSans-Regular';
+    src: url('../fonts/guardian/GuardianSans-Regular-Web.eot');
+    src: url('../fonts/guardian/GuardianSans-Regular-Web.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/guardian/GuardianSans-Regular-Web.woff') format('woff'), 
+         url('../fonts/guardian/GuardianSans-Regular-Web.ttf') format('truetype'), 
+         url('../fonts/guardian/GuardianSans-Regular-Web.svg#GuardianSansRegular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GuardianSans-RegularIt';
+    src: url('../fonts/guardian/GuardianSans-RegularIt-Web.eot');
+    src: url('../fonts/guardian/GuardianSans-RegularIt-Web.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/guardian/GuardianSans-RegularIt-Web.woff') format('woff'), 
+         url('../fonts/guardian/GuardianSans-RegularIt-Web.ttf') format('truetype'), 
+         url('../fonts/guardian/GuardianSans-RegularIt-Web.svg#GuardianSansRegularItalic') format('svg');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'GuardianSans-Medium';
+    src: url('../fonts/guardian/GuardianSans-Medium-Web.eot');
+    src: url('../fonts/guardian/GuardianSans-Medium-Web.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/guardian/GuardianSans-Medium-Web.woff') format('woff'), 
+         url('../fonts/guardian/GuardianSans-Medium-Web.ttf') format('truetype'), 
+         url('../fonts/guardian/GuardianSans-Medium-Web.svg#Guardian Sans Web') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GuardianSans-MediumIt';
+    src: url('../fonts/guardian/GuardianSans-MediumIt-Web.eot');
+    src: url('../fonts/guardian/GuardianSans-MediumIt-Web.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/guardian/GuardianSans-MediumIt-Web.woff') format('woff'), 
+         url('../fonts/guardian/GuardianSans-MediumIt-Web.ttf') format('truetype'), 
+         url('../fonts/guardian/GuardianSans-MediumIt-Web.svg#GuardianSansWeb') format('svg');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'GuardianSans-Semibold';
+    src: url('../fonts/guardian/GuardianSans-Bold-Web.eot');
+    src: url('../fonts/guardian/GuardianSans-Bold-Web.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/guardian/GuardianSans-Bold-Web.woff') format('woff'), 
+         url('../fonts/guardian/GuardianSans-Bold-Web.ttf') format('truetype'), 
+         url('../fonts/guardian/GuardianSans-Bold-Web.svg#GuardianSansBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GuardianSans-Bold';
+    src: url('../fonts/guardian/GuardianSans-Bold-Web.eot');
+    src: url('../fonts/guardian/GuardianSans-Bold-Web.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/guardian/GuardianSans-Bold-Web.woff') format('woff'), 
+         url('../fonts/guardian/GuardianSans-Bold-Web.ttf') format('truetype'), 
+         url('../fonts/guardian/GuardianSans-Bold-Web.svg#GuardianSansBold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GuardianSans-BoldIt';
+    src: url('../fonts/guardian/GuardianSans-BoldIt-Web.eot');
+    src: url('../fonts/guardian/GuardianSans-BoldIt-Web.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/guardian/GuardianSans-BoldIt-Web.woff') format('woff'), 
+         url('../fonts/guardian/GuardianSans-BoldIt-Web.ttf') format('truetype'), 
+         url('../fonts/guardian/GuardianSans-BoldIt-Web.svg#GuardianSansBoldItalic') format('svg');
+    font-weight: 700;
+    font-style: italic;
+}
+
+/**
+*   Font Mixins
+*   The font family must be redeclared... annoying but necessary.
+*/
+@mixin font-light($font-size) {
+    font: normal 300 #{$font-size}/#{$line-height} "GuardianSans-Light", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@mixin font-light-it($font-size) {
+    font: italic 300 #{$font-size}/#{$line-height} "GuardianSans-LightIt", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@mixin font-normal($font-size) {
+    font: normal 400 #{$font-size}/#{$line-height} "GuardianSans-Regular", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@mixin font-normal-it($font-size) {
+    font: italic 400 #{$font-size}/#{$line-height} "GuardianSans-RegularIt", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@mixin font-bold($font-size) {
+    font: normal 500 #{$font-size}/#{$line-height} "GuardianSans-Medium", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@mixin font-bold-it($font-size) {
+    font: italic 500 #{$font-size}/#{$line-height} "GuardianSans-MediumIt", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@mixin font-black($font-size) {
+    font: normal 600 #{$font-size}/#{$line-height} "GuardianSans-Semibold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@mixin font-black-it($font-size) {
+    font: italic 600 #{$font-size}/#{$line-height} "GuardianSans-SemiboldIt", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
